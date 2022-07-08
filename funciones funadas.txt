@@ -1,0 +1,375 @@
+/*boolean[] linea_1_ocupada= new boolean [14];
+boolean[] linea_2_ocupada= new boolean [14];
+boolean[] linea_3_ocupada= new boolean [14];
+boolean[] linea_4_ocupada= new boolean [14];
+boolean[] linea_5_ocupada= new boolean [14];*/
+
+/*int [] linea_1_objeto = new int [14];
+int [] linea_2_objeto = new int [14];
+int [] linea_3_objeto = new int [14];
+int [] linea_4_objeto = new int [14];
+int [] linea_5_objeto = new int [14];*/
+
+void construir (){
+  for (int k=0;k<=4;k++){
+    for (int i=0;i<=2;i++){
+      for (int j=0;i<=13;i++){
+          if (mousePressed&&(mouseY>250+k*height/14)&&(mouseY<250+k*height/14+height/14)){
+            if((mouseX>=0+j*width/14)&&(mouseX<=width/14+j*width/14)){
+              if(seleccionado[i]&&(comida>=costes[objSeleccionado])&&(objSeleccionado==i)){
+                if((k==0)&&(instancia>=1)&&(instancia<=3)&&(!linea_1_ocupada[j])){
+                  linea_1_ocupada[j]=true;
+                  linea_1_objeto[j]=i;
+                }
+                if((k==1)&&(instancia>=1)&&(instancia<=3)&&(!linea_2_ocupada[j])){
+                  linea_2_ocupada[j]=true;
+                  linea_2_objeto[j]=i;
+                }
+                if((k==2)&&(instancia>=1)&&(instancia<=3)&&(!linea_3_ocupada[j])){
+                  linea_3_ocupada[j]=true;
+                  linea_3_objeto[j]=i;
+                }
+                if((k==3)&&(instancia>=1)&&(instancia<=3)&&(!linea_4_ocupada[j])){
+                  linea_4_ocupada[j]=true;
+                  linea_4_objeto[j]=i;
+                }
+                if((k==4)&&(instancia>=1)&&(instancia<=3)&&(!linea_5_ocupada[j])){
+                  linea_5_ocupada[j]=true;
+                  linea_5_objeto[j]=i;
+                }
+              } 
+            }
+          }
+      }
+    }
+  } 
+}
+void construir (){
+  for(int k=0;k<=2;k++){
+    if(seleccionado[k]){ 
+      for(int j=0;j<=13;j++){
+         if((mouseY>250)&&(mouseY<250+height/14)&&(mouseX>0+j*width/14)&&(mouseX<width/14+j*width/14)&&(comida>=costes[k])&&(!linea_1_ocupada[j])){
+            
+            if(k==1){
+              linea_1_objeto[j]=k;
+              linea_1_ocupada[j]=true;
+              comida=comida-costes[k];
+              seleccionado[0]=false;
+              seleccionado[1]=false;
+              seleccionado[2]=false;
+            }
+            else if(k==2){
+              linea_1_objeto[j]=k;
+              linea_1_ocupada[j]=true;
+              comida=comida-costes[k];
+              seleccionado[0]=false;
+              seleccionado[1]=false;
+              seleccionado[2]=false;
+            }
+         }
+          else if((mouseY>250)&&(mouseY<250+height/14)&&(mouseX>0+j*width/14)&&(mouseX<width/14+j*width/14)&&(comida>=costes[k])&&(linea_1_ocupada[j])&&(k==0)){
+              linea_1_objeto[j]=k;
+              linea_1_ocupada[j]=false;
+              seleccionado[0]=false;
+              seleccionado[1]=false;
+              seleccionado[2]=false;
+            }
+         if((mouseY>250+height/14)&&(mouseY<250+2*height/14)&&(mouseX>0+j*width/14)&&(mouseX<width/14+j*width/14)&&(comida>=costes[k])&&(!linea_2_ocupada[j])&&(instancia>=2)&&(instancia<=3)){
+           if(k==1){
+              linea_2_objeto[j]=k;
+              linea_2_ocupada[j]=true;
+              comida=comida-costes[k];
+              seleccionado[0]=false;
+              seleccionado[1]=false;
+              seleccionado[2]=false;
+            }
+            else if(k==2){
+              linea_2_objeto[j]=k;
+              linea_2_ocupada[j]=true;
+              comida=comida-costes[k];
+              seleccionado[0]=false;
+              seleccionado[1]=false;
+              seleccionado[2]=false;
+            }
+         }
+         else if((mouseY>250+height/14)&&(mouseY<250+2*height/14)&&(mouseX>0+j*width/14)&&(mouseX<width/14+j*width/14)&&(comida>=costes[k])&&(linea_2_ocupada[j])&&(k==0)&&(instancia>=2)&&(instancia<=3)){
+              linea_2_objeto[j]=k;
+              linea_2_ocupada[j]=false;
+              seleccionado[0]=false;
+              seleccionado[1]=false;
+              seleccionado[2]=false;
+            }
+            if((mouseY>250+2*height/14)&&(mouseY<250+3*height/14)&&(mouseX>0+j*width/14)&&(mouseX<width/14+j*width/14)&&(comida>=costes[k])&&(!linea_3_ocupada[j])&&(instancia>=2)&&(instancia<=3)){
+           if(k==1){
+              linea_3_objeto[j]=k;
+              linea_3_ocupada[j]=true;
+              comida=comida-costes[k];
+              seleccionado[0]=false;
+              seleccionado[1]=false;
+              seleccionado[2]=false;
+            }
+            else if(k==2){
+              linea_3_objeto[j]=k;
+              linea_3_ocupada[j]=true;
+              comida=comida-costes[k];
+              seleccionado[0]=false;
+              seleccionado[1]=false;
+              seleccionado[2]=false;
+            }
+         }
+         else if((mouseY>250+2*height/14)&&(mouseY<250+3*height/14)&&(mouseX>0+j*width/14)&&(mouseX<width/14+j*width/14)&&(comida>=costes[k])&&(linea_3_ocupada[j])&&(k==0)&&(instancia>=2)&&(instancia<=3)){
+              linea_3_objeto[j]=k;
+              linea_3_ocupada[j]=false;
+              seleccionado[0]=false;
+              seleccionado[1]=false;
+              seleccionado[2]=false;
+            }
+                     if((mouseY>250+3*height/14)&&(mouseY<250+4*height/14)&&(mouseX>0+j*width/14)&&(mouseX<width/14+j*width/14)&&(comida>=costes[k])&&(!linea_4_ocupada[j])&&(instancia==3)){
+           if(k==1){
+              linea_4_objeto[j]=k;
+              linea_4_ocupada[j]=true;
+              comida=comida-costes[k];
+              seleccionado[0]=false;
+              seleccionado[1]=false;
+              seleccionado[2]=false;
+            }
+            else if(k==2){
+              linea_4_objeto[j]=k;
+              linea_4_ocupada[j]=true;
+              comida=comida-costes[k];
+              seleccionado[0]=false;
+              seleccionado[1]=false;
+              seleccionado[2]=false;
+            }
+         }
+         else if((mouseY>250+3*height/14)&&(mouseY<250+4*height/14)&&(mouseX>0+j*width/14)&&(mouseX<width/14+j*width/14)&&(linea_4_ocupada[j])&&(k==0)&&(instancia==3)){
+              linea_4_objeto[j]=k;
+              linea_4_ocupada[j]=false;
+              seleccionado[0]=false;
+              seleccionado[1]=false;
+              seleccionado[2]=false;
+            }
+         if((mouseY>250+4*height/14)&&(mouseY<250+5*height/14)&&(mouseX>0+j*width/14)&&(mouseX<width/14+j*width/14)&&(comida>=costes[k])&&(!linea_5_ocupada[j])&&(instancia==3)){
+           if(k==1){
+              linea_5_objeto[j]=k;
+              linea_5_ocupada[j]=true;
+              comida=comida-costes[k];
+              seleccionado[0]=false;
+              seleccionado[1]=false;
+              seleccionado[2]=false;
+            }
+            else if(k==2){
+              linea_5_objeto[j]=k;
+              linea_5_ocupada[j]=true;
+              comida=comida-costes[k];
+              seleccionado[0]=false;
+              seleccionado[1]=false;
+              seleccionado[2]=false;
+            }
+         }
+         else if((mouseY>250+4*height/14)&&(mouseY<250+5*height/14)&&(mouseX>0+j*width/14)&&(mouseX<width/14+j*width/14)&&(comida>=costes[k])&&(linea_5_ocupada[j])&&(k==0)&&(instancia==3)){
+              linea_5_objeto[j]=k;
+              linea_5_ocupada[j]=false;
+              seleccionado[0]=false;
+              seleccionado[1]=false;
+              seleccionado[2]=false;
+            }
+      }
+    }
+  } 
+  seleccionado[0]=false;
+      seleccionado[1]=false;
+      seleccionado[2]=false;
+      objSeleccionado=0;
+}
+void dibujarEstructuras (){
+  
+    for(int j=0;j<=13;j++){
+      if(linea_1_ocupada[j]){
+        if(linea_1_objeto[j]==0){
+          linea_1_ocupada[j]=false;
+        }
+        if(linea_1_objeto[j]==1){
+          ellipse(((width/14)/2)+j*width/14,250+(height/14)/2,width/14-20,height/14-20);
+        }
+        if(linea_1_objeto[j]==2){
+          pushStyle();
+          rectMode(CENTER);
+          rect((width/14)/2+j*width/14,250+(height/14)/2,width/14-20,height/14-20);
+          popStyle();
+        }
+      }
+      if(linea_2_ocupada[j]){
+        if(linea_2_objeto[j]==0){
+          linea_2_ocupada[j]=false;
+        }
+        if(linea_2_objeto[j]==1){
+          ellipse(((width/14)/2)+j*width/14,250+2*(height/14)+(height/14)/2-(height/14),width/14-20,height/14-20);
+        }
+        if(linea_2_objeto[j]==2){
+          pushStyle();
+          rectMode(CENTER);
+          rect((width/14)/2+j*width/14,250+2*(height/14)+(height/14)/2-(height/14),width/14-20,height/14-20);
+          popStyle();
+        }
+      }
+      if(linea_3_ocupada[j]){
+        if(linea_3_objeto[j]==0){
+          linea_3_ocupada[j]=false;
+        }
+        if(linea_3_objeto[j]==1){
+          ellipse(((width/14)/2)+j*width/14,250+3*(height/14)+(height/14)/2-(height/14),width/14-20,height/14-20);
+        }
+        if(linea_3_objeto[j]==2){
+          pushStyle();
+          rectMode(CENTER);
+          rect((width/14)/2+j*width/14,250+3*(height/14)+(height/14)/2-(height/14),width/14-20,height/14-20);
+          popStyle();
+        }
+      }
+            if(linea_4_ocupada[j]){
+        if(linea_4_objeto[j]==0){
+          linea_4_ocupada[j]=false;
+        }
+        if(linea_4_objeto[j]==1){
+          ellipse(((width/14)/2)+j*width/14,250+4*(height/14)+(height/14)/2-(height/14),width/14-20,height/14-20);
+        }
+        if(linea_4_objeto[j]==2){
+          pushStyle();
+          rectMode(CENTER);
+          rect((width/14)/2+j*width/14,250+4*(height/14)+(height/14)/2-(height/14),width/14-20,height/14-20);
+          popStyle();
+        }
+      }
+      if(linea_5_ocupada[j]){
+        if(linea_5_objeto[j]==0){
+          linea_5_ocupada[j]=false;
+        }
+        if(linea_5_objeto[j]==1){
+          ellipse(((width/14)/2)+j*width/14,250+5*(height/14)+(height/14)/2-(height/14),width/14-20,height/14-20);
+        }
+        if(linea_5_objeto[j]==2){
+          pushStyle();
+          rectMode(CENTER);
+          rect(((width/14)/2)+j*width/14,250+5*(height/14)+(height/14)/2-(height/14),width/14-20,height/14-20);
+          popStyle();
+        }
+      }
+    } 
+}
+void dibujar_layout (int ins) {
+  stroke(255);
+  fill(255);
+  text("recursos:",10,100);
+  text(comida,60,100);
+  text("puntaje;",210,30);
+  text(puntaje,280,30);
+  if (ins==1) {
+       if (chekar_boton_cuadrado(10, 10, 50, 50)||seleccionado[0]) {
+      fill (255);
+    } else {
+      noFill();
+    }
+    rect (10, 10, 50, 50);
+    line(10,10,60,60);
+    line(10,60,60,10);
+    if (chekar_boton_cuadrado(70, 10, 50, 50)||seleccionado[1]) {
+      fill (255);
+    }
+    else {
+      noFill();
+    }
+    rect (70, 10, 50, 50);
+    ellipse (95,35,40,40);
+    text("coste:100",70,80);
+    if (chekar_boton_cuadrado(130, 10, 50, 50)||seleccionado[2]) {
+      fill (255);
+    }
+    else {
+      noFill();
+    }
+    rect (130, 10, 50, 50);
+    text("coste:250",130,80);
+    for (int i=0; i<=width; i+=width/14) {
+      if ((mouseX>=i)&&(mouseX<=i+width/14)&&(mouseY>=250)&&(mouseY<=250+height/14)) {
+        fill(100);
+      }
+      else {
+        noFill();
+      }
+      rect (i, 250, width/14, height/14);
+    }
+    }
+   else if (ins==2) {
+    text("recursos:",10,100);
+    text(comida,60,100);
+    text("puntaje;",210,30);
+    text(puntaje,280,30);
+    if (chekar_boton_cuadrado(10, 10, 50, 50)||seleccionado[0]) {
+      fill (255);
+    } else {
+      noFill();
+    }
+    rect (10, 10, 50, 50);
+    line(10,10,60,60);
+    line(10,60,60,10);
+    if (chekar_boton_cuadrado(70, 10, 50, 50)||seleccionado[1]) {
+      fill (255);
+    } else {
+      noFill();
+    }
+    rect (70, 10, 50, 50);
+    ellipse (95,35,40,40);
+    if (chekar_boton_cuadrado(130, 10, 50, 50)||seleccionado[2]) {
+      fill (255);
+    } else {
+      noFill();
+    }
+    rect (130, 10, 50, 50);
+      for(int j=0; j<=2; j++){
+        for (int i=0; i<=width; i+=width/14) {
+        if ((mouseX>=i)&&(mouseX<=i+width/14)&&(mouseY>=250+j*height/14)&&(mouseY<=250+height/14+j*height/14)) {
+          fill(100);
+        } else {
+          noFill();
+        }
+        rect (i, 250+j*height/14, width/14, height/14);
+      }
+    }
+  } 
+  else if (ins==3) {
+
+    if (chekar_boton_cuadrado(10, 10, 50, 50)||seleccionado[0]) {
+      fill (255);
+    } else {
+      noFill();
+    }
+    rect (10, 10, 50, 50);
+    line(10,10,60,60);
+    line(10,60,60,10);
+    if (chekar_boton_cuadrado(70, 10, 50, 50)||seleccionado[1]) {
+      fill (255);
+    } else {
+      noFill();
+    }
+    rect (70, 10, 50, 50);
+    ellipse (95,35,40,40);
+    if (chekar_boton_cuadrado(130, 10, 50, 50)||seleccionado[2]) {
+      fill (255);
+    } else {
+      noFill();
+    }
+    rect (130, 10, 50, 50);
+    for(int j=0; j<=4; j++){
+    for (int i=0; i<=width; i+=width/14) {
+        if ((mouseX>=i)&&(mouseX<=i+width/14)&&(mouseY>=250+j*height/14)&&(mouseY<=250+height/14+j*height/14)) {
+          fill(100);
+        } else {
+          noFill();
+        }
+        rect (i, 250+j*height/14, width/14, height/14);
+      }     
+    }
+  }
+  
+}
